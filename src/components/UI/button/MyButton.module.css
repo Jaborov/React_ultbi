@@ -1,0 +1,23 @@
+.myBtn {
+    padding: 5px 15px;
+    color: teal;
+    font-size: 14px;
+    background: transparent;
+    border: 1px solid teal;
+    cursor: pointer;
+}
+.myBtn:hover {
+    background-color: teal;
+    color: white;
+}
+
+.Btn_danger {
+    padding: 8px;
+    margin: 8px;
+    border: none;
+    color: white;
+    font-size: x-large;
+    border-radius: 4px;
+    background-color: #ff3b1f;
+    cursor: pointer;
+}
