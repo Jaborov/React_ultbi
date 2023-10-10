@@ -38,7 +38,7 @@ function App() {
     setPosts(posts.filter((p) => p.id !== post.id));
   };
   // const bodyInputRed = useRef();
-
+  // Git restore testing
   return (
     <div className="App">
       <PostForm create={createPost} />
