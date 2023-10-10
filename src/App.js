@@ -5,6 +5,7 @@ import PostForm from "./components/PostForm";
 import PostFiltr from "./components/PostFiltr";
 import MyModal from "./components/modal/MyModal";
 import MyButton from "./components/UI/button/MyButton";
+import { usePosts } from "./hooks/usePosts";
 
 function App() {
   const [posts, setPosts] = useState([
@@ -16,22 +17,7 @@ function App() {
 
   const [modal, setModal] = useState(false);
   const [filter, setFilter] = useState({ sort: "", query: "" });
-
-  const sortedPosts = useMemo(() => {
-    console.log("Отработала функция сортед пост");
-    if (filter.sort) {
-      return [...posts].sort((a, b) =>
-        a[filter.sort].localeCompare(b[filter.sort])
-      );
-    }
-    return posts;
-  }, [filter.sort, posts]);
-
-  const sortedAndSearchedPosts = useMemo(() => {
-    return sortedPosts.filter((post) =>
-      post.title.toLocaleLowerCase().includes(filter.query)
-    );
-  }, [filter.query, sortedPosts]);
+  const sortedAndSearchedPosts = usePosts(posts, filter.sort, filter.query);
 
   const createPost = (newPost) => {
     setPosts([...posts, newPost]);
@@ -45,7 +31,9 @@ function App() {
 
   return (
     <div className="App">
-      <MyButton style={{marginTop: "30px"}} onClick={() => setModal(true)}>Create Post</MyButton>
+      <MyButton style={{ marginTop: "30px" }} onClick={() => setModal(true)}>
+        Create Post
+      </MyButton>
       <MyModal visible={modal} setVisible={setModal}>
         <PostForm create={createPost} />
       </MyModal>
