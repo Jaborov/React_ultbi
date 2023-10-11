@@ -1,5 +1,5 @@
-import MyInput from "./UI/button/input/MyInput";
-import MySelect from "./UI/button/select/MySelect";
+import MyInput from "./UI/input/MyInput";
+import MySelect from "./UI/select/MySelect";
 const PostFiltr = ({ filter, setFilter }) => {
   return (
     <div>

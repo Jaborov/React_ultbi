@@ -1,4 +1,4 @@
-import MyInput from "./UI/button/input/MyInput";
+import MyInput from "./UI/input/MyInput";
 import MyButton from "./UI/button/MyButton";
 import { useState } from "react";
 
