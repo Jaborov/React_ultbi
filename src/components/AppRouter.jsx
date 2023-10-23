@@ -1,15 +1,13 @@
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 import Error from "../pages/Error";
 import About from "../pages/About";
 import Posts from "../pages/Posts";
 import PostIdPage from "../pages/PostIdPage";
-
-import { publicRoutes, privateRoutes } from "../router";
 import Login from "../pages/Login";
 import { useContext } from "react";
 import { AuthContext } from "../context";
 const AppRouter = () => {
-  const {isAuth, setIsAuth} = useContext(AuthContext)
+  const {isAuth} = useContext(AuthContext)
   console.log(isAuth)
   return (
     isAuth 
